@@ -1,0 +1,224 @@
+/* ================================= */
+/* GLOBAL STYLES STARTS */
+/* ================================= */
+
+html,
+body {
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+a {
+  color: #77a0e5;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+}
+
+.btn-global {
+  background-image: linear-gradient(to right, #5bc9e4, #986de7);
+  color: #fff;
+  border: none;
+  padding: 15px;
+  font-size: 20px;
+  border-radius: 0;
+  transition: ease-in-out all 0.5s;
+}
+
+.form-heading {
+  font-size: 30px;
+}
+
+.border-custom {
+  border: none;
+  border-bottom: 1px solid;
+}
+
+input,
+textarea {
+  outline: none;
+  box-shadow: none !important;
+}
+
+input:focus {
+  outline: none !important;
+}
+
+/* ================================= */
+/* NAVBAR STYLES STARTS */
+/* ================================= */
+
+.nav-user-img {
+  max-width: 40px;
+  border: 2px solid #976ee7;
+  border-radius: 100%;
+}
+
+.navbar-light .navbar-brand {
+  color: rgb(151 109 231);
+}
+
+/* ================================= */
+/* LOGIN AND SIGNUP PAGE STYLES STARTS */
+/* ================================= */
+
+#login,
+#signup,
+#timeline {
+  background-image: linear-gradient(to right, #5bc9e4, #986de7);
+  min-height: 100vh;
+}
+
+#login .login-form,
+#signup .signup-form {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#login .login-form .form-inner,
+#signup .signup-form .form-inner {
+  width: 100%;
+}
+
+/* ================================= */
+/* TIMELINE PAGE STYLES STARTS */
+/* ================================= */
+
+#timeline .sidebar {
+  background-color: #fff;
+}
+
+#timeline .sidebar .nav-item img {
+  max-width: 30px;
+  margin-right: 10px;
+}
+
+#timeline .sidebar .nav-item {
+  border-bottom: 1px solid #ededed;
+  padding: 10px 0;
+}
+
+#timeline .sidebar .nav-item .user-info {
+  justify-content: center;
+  color: #fff;
+  background: #7e94e6;
+  padding: 20px;
+  align-items: center;
+}
+
+#timeline .sidebar .nav-item .user-info img {
+  min-width: 80px;
+  min-height: 80px;
+  border-radius: 100%;
+  border: 4px solid #fff;
+}
+
+#timeline .timeline {
+  background: #fff;
+  padding: 10px 20px;
+}
+
+#timeline .timeline .user-info-outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#timeline .timeline .post-form {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+#timeline .timeline .post-form .user-image {
+  max-width: 90px;
+  max-height: 90px;
+  border-radius: 100%;
+  border: 3px solid #9670e7;
+}
+
+#timeline .timeline .post-form textarea {
+  max-height: 50px;
+}
+
+#timeline .timeline .card .card-body .top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#timeline .timeline .card .card-body .top .likes {
+  margin-right: 40px;
+  color: #61c84f;
+}
+
+#timeline .timeline .card .card-body .top .dislikes {
+  color: #e43631;
+}
+
+#timeline .timeline .card .card-body .inner {
+  display: flex;
+  align-items: center;
+}
+
+#timeline .timeline .card .card-body img.user-image {
+  max-width: 50px;
+  max-height: 50px;
+  border-radius: 100%;
+  border: 2px solid #9670e7;
+  margin-right: 10px;
+}
+
+#timeline .timeline .card .card-body .user-details .name {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+#timeline .timeline .card .card-body .user-details p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #9670e7;
+}
+
+#timeline .follow {
+  background: #fff;
+  padding: 20px 10px;
+  position: fixed;
+  min-height: 100vh;
+}
+
+#timeline .follow .follow-user {
+  display: flex;
+  align-items: center;
+}
+
+#timeline .follow .follow-user img.user-image {
+  max-width: 50px;
+  max-height: 50px;
+  border-radius: 100%;
+  border: 2px solid #9670e7;
+  margin-right: 10px;
+}
+
+#timeline .follow .follow-user .name {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+#timeline .follow .follow-user p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #9670e7;
+  cursor: pointer;
+}
