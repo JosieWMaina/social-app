@@ -24,6 +24,18 @@ a {
   text-decoration: none;
 }
 
+input#file {
+  display: none;
+}
+
+.upload-img {
+  cursor: pointer;
+}
+
+#img-preview img {
+  max-width: 100%;
+}
+
 .btn-global {
   background-image: linear-gradient(to right, #5bc9e4, #986de7);
   color: #fff;
@@ -194,7 +206,7 @@ input:focus {
 #timeline .follow {
   background: #fff;
   padding: 20px 10px;
-  position: fixed;
+  /* position: fixed; */
   min-height: 100vh;
 }
 

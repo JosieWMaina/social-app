@@ -23,8 +23,7 @@ const signup = () => {
   ) {
     if (passwordInp.value === confirmPasswordInp.value) {
       localStorage.setItem("current-user", JSON.stringify(user));
-      console.log(window.location.hostname);
-      let myHref = window.location.href.split("/signup.html#");
+      let myHref = window.location.href.split("/signup.html");
       window.location.href = `${myHref[0]}/login.html`;
     } else {
       console.log("Passwords not matched!");

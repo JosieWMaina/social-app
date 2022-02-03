@@ -83,11 +83,15 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                <img src="./img/user-1.jpg" alt="" class="nav-user-img">
+                <img src="./img/user-1.jpg" alt="" class="nav-user-img" />
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="#">Settings</a></li>
-                <li><a class="dropdown-item" href="./login.html">Logout</a></li>
+                <li>
+                  <a class="dropdown-item" id="logout-btn" href="./login.html"
+                    >Logout</a
+                  >
+                </li>
               </ul>
             </li>
           </ul>
@@ -163,7 +167,7 @@
           <div class="timeline">
             <div class="row">
               <div class="col-12">
-                <form class="post-form">
+                <form class="post-form" id="upload-form">
                   <div class="user-info-outer">
                     <img src="./img/user-1.jpg" alt="" class="user-image" />
                     <textarea
@@ -171,204 +175,29 @@
                       class="form-control mx-3"
                       placeholder="Type whatever you wish :)"
                     ></textarea>
-                    <img src="./img/photos.png" alt="" class="me-3" />
-                    <a href="#" class="btn btn-global rounded-pill">Publish</a>
+                    <label for="file">
+                      <img src="./img/photos.png" alt="" class="me-3 upload-img" />
+                    </label>
+                    <input type="file" id="file" accept="image/*" />
+                    <a href="#" class="btn btn-global rounded-pill" id="submitBtn">Publish</a>
+                  </div>
+                  <div class="col-12">
+                    <div id="img-preview"></div>
                   </div>
                 </form>
               </div>
             </div>
-            <div class="row">
-              <div class="col-12 col-sm-6">
-                <div class="card mt-4">
-                  <img src="./img/1.jpg" class="card-img-top" alt="..." />
-                  <div class="card-body">
-                    <div class="top">
-                      <div class="likes">
-                        <img src="./img/like.png" alt="" />
-                        <span>8</span>
-                      </div>
-                      <div class="dislikes">
-                        <img src="./img/dislike.png" alt="" />
-                        <span>8</span>
-                      </div>
-                    </div>
-                    <div class="inner">
-                      <img src="./img/user-2.jpg" alt="" class="user-image" />
-                      <div class="user-details">
-                        <h4 class="name mb-0">Sarah Cruiz</h4>
-                        <p class="mb-0">Friend</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-sm-6">
-                <div class="card mt-4">
-                  <img src="./img/2.jpg" class="card-img-top" alt="..." />
-                  <div class="card-body">
-                    <div class="top">
-                      <div class="likes">
-                        <img src="./img/like.png" alt="" />
-                        <span>8</span>
-                      </div>
-                      <div class="dislikes">
-                        <img src="./img/dislike.png" alt="" />
-                        <span>8</span>
-                      </div>
-                    </div>
-                    <div class="inner">
-                      <img src="./img/user-2.jpg" alt="" class="user-image" />
-                      <div class="user-details">
-                        <h4 class="name mb-0">Sarah Cruiz</h4>
-                        <p class="mb-0">Friend</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-sm-6">
-                <div class="card mt-4">
-                  <img src="./img/3.jpg" class="card-img-top" alt="..." />
-                  <div class="card-body">
-                    <div class="top">
-                      <div class="likes">
-                        <img src="./img/like.png" alt="" />
-                        <span>8</span>
-                      </div>
-                      <div class="dislikes">
-                        <img src="./img/dislike.png" alt="" />
-                        <span>8</span>
-                      </div>
-                    </div>
-                    <div class="inner">
-                      <img src="./img/user-2.jpg" alt="" class="user-image" />
-                      <div class="user-details">
-                        <h4 class="name mb-0">Sarah Cruiz</h4>
-                        <p class="mb-0">Friend</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-sm-6">
-                <div class="card mt-4">
-                  <img src="./img/4.jpg" class="card-img-top" alt="..." />
-                  <div class="card-body">
-                    <div class="top">
-                      <div class="likes">
-                        <img src="./img/like.png" alt="" />
-                        <span>8</span>
-                      </div>
-                      <div class="dislikes">
-                        <img src="./img/dislike.png" alt="" />
-                        <span>8</span>
-                      </div>
-                    </div>
-                    <div class="inner">
-                      <img src="./img/user-2.jpg" alt="" class="user-image" />
-                      <div class="user-details">
-                        <h4 class="name mb-0">Sarah Cruiz</h4>
-                        <p class="mb-0">Friend</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-sm-6">
-                <div class="card mt-4">
-                  <img src="./img/5.jpg" class="card-img-top" alt="..." />
-                  <div class="card-body">
-                    <div class="top">
-                      <div class="likes">
-                        <img src="./img/like.png" alt="" />
-                        <span>8</span>
-                      </div>
-                      <div class="dislikes">
-                        <img src="./img/dislike.png" alt="" />
-                        <span>8</span>
-                      </div>
-                    </div>
-                    <div class="inner">
-                      <img src="./img/user-2.jpg" alt="" class="user-image" />
-                      <div class="user-details">
-                        <h4 class="name mb-0">Sarah Cruiz</h4>
-                        <p class="mb-0">Friend</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-sm-6">
-                <div class="card mt-4">
-                  <img src="./img/6.jpg" class="card-img-top" alt="..." />
-                  <div class="card-body">
-                    <div class="top">
-                      <div class="likes">
-                        <img src="./img/like.png" alt="" />
-                        <span>8</span>
-                      </div>
-                      <div class="dislikes">
-                        <img src="./img/dislike.png" alt="" />
-                        <span>8</span>
-                      </div>
-                    </div>
-                    <div class="inner">
-                      <img src="./img/user-2.jpg" alt="" class="user-image" />
-                      <div class="user-details">
-                        <h4 class="name mb-0">Sarah Cruiz</h4>
-                        <p class="mb-0">Friend</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div class="row" id="posts-wrapper"></div>
           </div>
           <!-- ========================= -->
           <!-- SIDEBAR ENDS -->
           <!-- ========================= -->
         </div>
-        <div class="col-md-3 bg-white">
+        <div class="col-md-3">
           <!-- ========================= -->
           <!-- FOLLOW STARTS -->
           <!-- ========================= -->
-          <div class="follow">
-            <div class="follow-user mb-4">
-              <img src="./img/user-3.jpg" alt="" class="user-image" />
-              <div class="user-details">
-                <h4 class="name mb-0">Diana Amber</h4>
-                <p class="mb-0">Add Friend</p>
-              </div>
-            </div>
-            <div class="follow-user mb-4">
-              <img src="./img/user-4.jpg" alt="" class="user-image" />
-              <div class="user-details">
-                <h4 class="name mb-0">Cris Haris</h4>
-                <p class="mb-0">Add Friend</p>
-              </div>
-            </div>
-            <div class="follow-user mb-4">
-              <img src="./img/user-5.jpg" alt="" class="user-image" />
-              <div class="user-details">
-                <h4 class="name mb-0">Brian Walton</h4>
-                <p class="mb-0">Add Friend</p>
-              </div>
-            </div>
-            <div class="follow-user mb-4">
-              <img src="./img/user-6.jpg" alt="" class="user-image" />
-              <div class="user-details">
-                <h4 class="name mb-0">Olivia Steward</h4>
-                <p class="mb-0">Add Friend</p>
-              </div>
-            </div>
-            <div class="follow-user mb-4">
-              <img src="./img/user-7.jpg" alt="" class="user-image" />
-              <div class="user-details">
-                <h4 class="name mb-0">Sophia Page</h4>
-                <p class="mb-0">Add Friend</p>
-              </div>
-            </div>
-          </div>
+          <div class="follow" id="follow"></div>
           <!-- ========================= -->
           <!-- FOLLOW ENDS -->
           <!-- ========================= -->
@@ -376,6 +205,12 @@
       </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/data.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>
