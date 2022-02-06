@@ -1,3 +1,4 @@
+const imagesBaseUrl = './../img/';
 let data = [{
   users: [
     {
@@ -6,8 +7,9 @@ let data = [{
       lastName: "Bret",
       email: "Sincere@april.biz",
       password: "pass1",
+      userImage: `${imagesBaseUrl}user-1.jpg`,
       posts: [
-        {imageID: "1dw19ruCOsk", likes: 8, dislikes: 8}
+        {imageID: `${imagesBaseUrl}1.jpg`, likes: 8, dislikes: 8}
       ]
     },
     {
@@ -16,8 +18,9 @@ let data = [{
       lastName: "Antonette",
       email: "Shanna@melissa.tv",
       password: "pass2",
+      userImage: `${imagesBaseUrl}user-2.jpg`,
       posts: [
-        {imageID: "MD9LF33G39I", likes: 8, dislikes: 8}
+        {imageID: `${imagesBaseUrl}2.jpg`, likes: 8, dislikes: 8}
       ]
     },
     {
@@ -26,9 +29,10 @@ let data = [{
       lastName: "Samantha",
       email: "Nathan@yesenia.net",
       password: "pass3",
+      userImage: `${imagesBaseUrl}user-3.jpg`,
       posts: [
-        {imageID: "qVotBxrCzD4", likes: 8, dislikes: 8},
-        {imageID: "qVotBxrCzD4", likes: 8, dislikes: 8},
+        {imageID: `${imagesBaseUrl}3.jpg`, likes: 8, dislikes: 8},
+        {imageID: `${imagesBaseUrl}4.jpg`, likes: 8, dislikes: 8},
       ]
     },
     {
@@ -37,8 +41,9 @@ let data = [{
       lastName: "Karianne",
       email: "Julianne.OConner@kory.org",
       password: "pass4",
+      userImage: `${imagesBaseUrl}user-4.jpg`,
       posts: [
-        {imageID: "JjjSPPzzpkU", likes: 8, dislikes: 8}
+        {imageID: `${imagesBaseUrl}5.jpg`, likes: 8, dislikes: 8}
       ]
     },
     {
@@ -47,8 +52,9 @@ let data = [{
       lastName: "Kamren",
       email: "Lucio_Hettinger@annie.ca",
       password: "pass5",
+      userImage: `${imagesBaseUrl}user-5.jpg`,
       posts: [
-        {imageID: "vfOtKkhHkbE", likes: 8, dislikes: 8}
+        {imageID: `${imagesBaseUrl}6.jpg`, likes: 8, dislikes: 8}
       ]
     },
     {
@@ -57,8 +63,9 @@ let data = [{
       lastName: "Leopoldo_Corkery",
       email: "Karley_Dach@jasper.info",
       password: "pass6",
+      userImage: `${imagesBaseUrl}user-6.jpg`,
       posts: [
-        {imageID: "uZz6qW7n9KU", likes: 8, dislikes: 8}
+        {imageID: `${imagesBaseUrl}7.jpg`, likes: 8, dislikes: 8}
       ]
     },
     {
@@ -67,8 +74,9 @@ let data = [{
       lastName: "Elwyn.Skiles",
       email: "Telly.Hoeger@billy.biz",
       password: "pass7",
+      userImage: `${imagesBaseUrl}user-7.jpg`,
       posts: [
-        {imageID: "DbQSrStE_4U", likes: 8, dislikes: 8}
+        {imageID: `${imagesBaseUrl}1.jpg`, likes: 8, dislikes: 8}
       ]
     },
   ]

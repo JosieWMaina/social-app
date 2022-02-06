@@ -1,6 +1,15 @@
 const loginBtn = document.getElementById("login-btn");
 const emailInp = document.getElementById("email-inp");
 const passwordInp = document.getElementById("password-inp");
+const currentUser = localStorage.getItem("current-user");
+const errorWrapper = document.getElementById("error");
+let error = {message: ''};
+
+
+if (currentUser) {
+  let myHref = window.location.href.split("/login.html");
+  window.location.href = `${myHref[0]}/index.html`;
+}
 
 const checkUserInData = (currentUser) => {
   const filteredUser = data[0].users.filter(
@@ -15,22 +24,34 @@ const checkUserInData = (currentUser) => {
 };
 
 const login = () => {
-  const getUser = localStorage.getItem("current-user");
+  const getUser = localStorage.getItem("saved-user");
   const parsedUser = JSON.parse(getUser);
-  const {email, password} = parsedUser || {};
+  const {email, password, firstName, userImage} = parsedUser || {};
   if (
     (email === emailInp.value && password === passwordInp.value) ||
     checkUserInData({ email: emailInp.value, password: passwordInp.value })
   ) {
+    const filteredU = data[0].users.filter(
+      (user) =>
+        user.email === emailInp.value && user.password === passwordInp.value
+    );
+    console.log(filteredU)
     const loginUser = {
       email: emailInp.value,
       password: passwordInp.value,
+      firstName: filteredU.length > 0 ? filteredU[0].firstName : firstName,
+      posts: filteredU.length > 0 ? filteredU[0].posts : [],
+      userImage: filteredU.length > 0 ? filteredU[0].userImage : userImage
     };
     localStorage.setItem("current-user", JSON.stringify(loginUser));
     let myHref = window.location.href.split("/login.html");
     window.location.href = `${myHref[0]}/index.html`;
   } else {
-      console.log("Crediantials not matched!")
+      error.message = "Email or password is invilid!"
+      if(error.message) {
+        errorWrapper.classList.toggle('d-none')
+        errorWrapper.innerText = error.message
+      }
   }
 };
 

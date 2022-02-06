@@ -11,36 +11,63 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
     <section id="login">
       <div class="container">
         <div class="row">
-          <div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+          <div
+            class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4"
+          >
             <form class="login-form">
               <div class="form-inner pt-4 pb-5 px-4 bg-white rounded-1">
-                <h1 class="text-center mb-4 pt-2 mt-0 form-heading">Login Form</h1>
+                <h1 class="text-center mb-4 pt-2 mt-0 form-heading">
+                  Login Form
+                </h1>
+                <div
+                  id="error"
+                  class="alert alert-danger d-none"
+                  role="alert"
+                ></div>
                 <div class="mb-3">
                   <label for="email" class="form-label">Email</label>
-                  <input type="email" id="email-inp" class="form-control py-3 rounded-0" id="email" />
+                  <input
+                    type="email"
+                    id="email-inp"
+                    class="form-control py-3 rounded-0"
+                    id="email"
+                  />
                 </div>
                 <div class="mb-3">
                   <label for="password" class="form-label">Password</label>
-                  <input type="password" id="password-inp" class="form-control py-3 rounded-0" id="password" />
+                  <input
+                    type="password"
+                    id="password-inp"
+                    class="form-control py-3 rounded-0"
+                    id="password"
+                  />
                 </div>
                 <div class="mb-5">
-                    <a href="#">Forget Password?</a>
+                  <a href="#">Forget Password?</a>
                 </div>
                 <div class="mb-3">
-                    <a href="#" id="login-btn" class="btn btn-global rounded-pill w-100">Login</a>
+                  <a
+                    href="#"
+                    id="login-btn"
+                    class="btn btn-global rounded-pill w-100"
+                    >Login</a
+                  >
                 </div>
                 <div class="mb-0">
-                    <p class="mb-0">
-                        Not a member? 
-                        <a href="./signup.html" class="">Signup Now</a>
-                    </p>
+                  <p class="mb-0">
+                    Not a member?
+                    <a href="./signup.html" class="">Signup Now</a>
+                  </p>
                 </div>
               </div>
             </form>
