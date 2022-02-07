@@ -7,6 +7,7 @@ const uploadForm = document.getElementById("upload-form");
 const uploadBtn = document.getElementById("submitBtn");
 const fileInp = document.getElementById("file");
 const uploadError = document.getElementById("upload-error");
+const likeBtn = document.getElementById("likedBtn");
 const currentUser = localStorage.getItem("current-user");
 const parsedUser = JSON.parse(currentUser);
 let userName = document.getElementById("user-name");
@@ -30,6 +31,18 @@ let userList = data[0].users.map((user, index) => {
 
 followWrapper.innerHTML = userList.join("");
 
+
+const likePost = (ind) => {
+  let likeIcon = document.getElementById(`likeIcon${ind}`);
+  // console.log(likeIcon.src, )
+  let url = window.location.href.split('/index.html');
+  if(likeIcon.src === `${url[0]}/img/unlike.svg`) {
+    likeIcon.src = './../img/like.svg'
+  } else {
+    likeIcon.src = './../img/unlike.svg'
+  }
+}
+
 let postsList = data[0].users.map((user, index) => {
   console.log(user)
   const users = user.posts.map((post, ind) => {
@@ -39,13 +52,8 @@ let postsList = data[0].users.map((user, index) => {
         <img src="./img/${index + 1}.jpg" class="card-img-top" alt="..." />
         <div class="card-body">
           <div class="top">
-            <div class="likes">
-              <img src="./img/like.png" alt="" />
-              <span>${post.likes}</span>
-            </div>
-            <div class="dislikes">
-              <img src="./img/dislike.png" alt="" />
-              <span>${post.dislikes}</span>
+            <div class="likes" id="likedBtn" onclick="likePost(${index})">
+              <img id="likeIcon${index}" src="./img/unlike.svg" alt="" />
             </div>
           </div>
           <div class="inner">
@@ -64,18 +72,15 @@ let postsList = data[0].users.map((user, index) => {
 });
 
 const currentUserPosts = parsedUser.posts.map((post, index) => {
+  console.log(post, 'he')
   return `
-    <div class="col-12 col-sm-6">
+    <div class="col-12 col-sm-6" id="myDiv${index}">
       <div class="card mt-4">
         <img src="${post.imageID}" class="card-img-top" alt="..." />
         <div class="card-body">
           <div class="top">
-            <div class="likes">
-              <img src="./img/like.png" alt="" />
-              <span>${post.likes}</span>
-            </div>
-            <div class="dislikes">
-              <img src="./img/dislike.png" alt="" />
+            <div class="likes" id="likedBtn" onclick="likePost(${index + 100})">
+              <img id="likeIcon${index + 100}" src="./img/unlike.svg" alt="" />
             </div>
           </div>
           <div class="inner">
@@ -143,6 +148,9 @@ const addPost = () => {
     console.log("Please select an Image");
   }
 };
+
+
+// likeBtn.addEventListener('click', likePost);
 
 uploadBtn.addEventListener("click", addPost);
 logoutBtn.addEventListener("click", logout);

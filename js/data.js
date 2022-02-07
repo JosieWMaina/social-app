@@ -9,7 +9,7 @@ let data = [{
       password: "pass1",
       userImage: `${imagesBaseUrl}user-1.jpg`,
       posts: [
-        {imageID: `${imagesBaseUrl}1.jpg`, likes: 8, dislikes: 8}
+        {imageID: `${imagesBaseUrl}1.jpg`, likes: 8, liked: false}
       ]
     },
     {
@@ -20,7 +20,7 @@ let data = [{
       password: "pass2",
       userImage: `${imagesBaseUrl}user-2.jpg`,
       posts: [
-        {imageID: `${imagesBaseUrl}2.jpg`, likes: 8, dislikes: 8}
+        {imageID: `${imagesBaseUrl}2.jpg`, likes: 8, liked: false}
       ]
     },
     {
@@ -31,8 +31,7 @@ let data = [{
       password: "pass3",
       userImage: `${imagesBaseUrl}user-3.jpg`,
       posts: [
-        {imageID: `${imagesBaseUrl}3.jpg`, likes: 8, dislikes: 8},
-        {imageID: `${imagesBaseUrl}4.jpg`, likes: 8, dislikes: 8},
+        {imageID: `${imagesBaseUrl}3.jpg`, likes: 8, liked: false},
       ]
     },
     {
@@ -43,7 +42,7 @@ let data = [{
       password: "pass4",
       userImage: `${imagesBaseUrl}user-4.jpg`,
       posts: [
-        {imageID: `${imagesBaseUrl}5.jpg`, likes: 8, dislikes: 8}
+        {imageID: `${imagesBaseUrl}5.jpg`, likes: 8, liked: false}
       ]
     },
     {
@@ -54,7 +53,7 @@ let data = [{
       password: "pass5",
       userImage: `${imagesBaseUrl}user-5.jpg`,
       posts: [
-        {imageID: `${imagesBaseUrl}6.jpg`, likes: 8, dislikes: 8}
+        {imageID: `${imagesBaseUrl}6.jpg`, likes: 8, liked: false}
       ]
     },
     {
@@ -65,7 +64,7 @@ let data = [{
       password: "pass6",
       userImage: `${imagesBaseUrl}user-6.jpg`,
       posts: [
-        {imageID: `${imagesBaseUrl}7.jpg`, likes: 8, dislikes: 8}
+        {imageID: `${imagesBaseUrl}7.jpg`, likes: 8, liked: false}
       ]
     },
     {
@@ -76,7 +75,7 @@ let data = [{
       password: "pass7",
       userImage: `${imagesBaseUrl}user-7.jpg`,
       posts: [
-        {imageID: `${imagesBaseUrl}1.jpg`, likes: 8, dislikes: 8}
+        {imageID: `${imagesBaseUrl}1.jpg`, likes: 8, liked: false}
       ]
     },
   ]

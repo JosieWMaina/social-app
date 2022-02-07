@@ -172,7 +172,8 @@ input:focus {
 
 #timeline .timeline .card .card-body .top .likes {
   margin-right: 40px;
-  color: #61c84f;
+  color: #8c80e7;
+  cursor: pointer;
 }
 
 #timeline .timeline .card .card-body .top .dislikes {
