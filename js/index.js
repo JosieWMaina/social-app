@@ -3,15 +3,21 @@ const followWrapper = document.getElementById("follow");
 const postsWrapper = document.getElementById("posts-wrapper");
 const currentPostsWrapper = document.getElementById("current-posts-wrapper");
 let imgPreview = document.querySelector("#img-preview");
-const uploadForm = document.getElementById("upload-form");
+const uploadProfile = document.getElementById("profile-upload-btn");
 const uploadBtn = document.getElementById("submitBtn");
 const fileInp = document.getElementById("file");
 const uploadError = document.getElementById("upload-error");
 const likeBtn = document.getElementById("likedBtn");
 const currentUser = localStorage.getItem("current-user");
 const parsedUser = JSON.parse(currentUser);
+const userImage = document.getElementById("preview-user-image");
+const userImageNav = document.getElementById("user-nav-img");
+const userImageSidebar = document.getElementById("user-image-sidebar");
+const userImageInp = document.getElementById("file2");
+let profileImageUpload = document.getElementById("profile-image");
 let userName = document.getElementById("user-name");
 let uploadImageSrc;
+let updatedProfileSrc;
 
 if (!currentUser) {
   let myHref = window.location.href.split("/index.html");
@@ -29,22 +35,64 @@ let userList = data[0].users.map((user, index) => {
     </div>`;
 });
 
+if(parsedUser.userImage) {
+  userImage.src = parsedUser.userImage;
+  userImageNav.src = parsedUser.userImage;
+  userImageSidebar.src = parsedUser.userImage;
+}
+
 followWrapper.innerHTML = userList.join("");
 
+userImageInp.addEventListener("change", (event) => {
+  event.preventDefault();
+  uploadError.classList.add("d-none");
+  if (!file2.value.length) return;
 
-const likePost = (ind) => {
-  let likeIcon = document.getElementById(`likeIcon${ind}`);
-  // console.log(likeIcon.src, )
-  let url = window.location.href.split('/index.html');
-  if(likeIcon.src === `${url[0]}/img/unlike.svg`) {
-    likeIcon.src = './../img/like.svg'
-  } else {
-    likeIcon.src = './../img/unlike.svg'
+  let reader = new FileReader();
+  reader.onload = profileLog;
+  reader.readAsDataURL(file2.files[0]);
+});
+
+function profileLog(event) {
+  let str = event.target.result;
+  if (str) {
+    userImage.src = str;
+    updatedProfileSrc = str;
+    uploadProfile.innerHTML = `<a href="#" id="profile-image" onclick="updateCurrentUserImage()" class="btn btn-global px-2 py-2 rounded-pill ms-2 d-hide">
+    <img src="./img/upload.svg" alt="">
+  </a>`;
   }
 }
 
+const updateCurrentUserImage = () => {
+  if (updatedProfileSrc) {
+    const strSize = new Blob([updatedProfileSrc]).size / 1000;
+    if (strSize > 400) {
+      uploadError.classList.remove("d-none");
+      uploadError.innerText = "Please select an Image size less then 400kb";
+      userImage.innerHTML = "";
+    } else {
+      const userImage = updatedProfileSrc;
+      const upUser = {...parsedUser, userImage}
+      localStorage.setItem("current-user", JSON.stringify(upUser));
+      document.location.reload(true);
+    }
+  } else {
+    console.log("Please select an Image");
+  }
+};
+
+const likePost = (ind) => {
+  let likeIcon = document.getElementById(`likeIcon${ind}`);
+  let url = window.location.href.split("/index.html");
+  if (likeIcon.src === `${url[0]}/img/unlike.svg`) {
+    likeIcon.src = "./../img/like.svg";
+  } else {
+    likeIcon.src = "./../img/unlike.svg";
+  }
+};
+
 let postsList = data[0].users.map((user, index) => {
-  console.log(user)
   const users = user.posts.map((post, ind) => {
     return `
     <div class="col-12 col-sm-6">
@@ -57,7 +105,9 @@ let postsList = data[0].users.map((user, index) => {
             </div>
           </div>
           <div class="inner">
-            <img src="${user.userImage ? user.userImage : './img/user-1.jpg'}" alt="" class="user-image" />
+            <img src="${
+              user.userImage ? user.userImage : "./img/user-1.jpg"
+            }" alt="" class="user-image" />
             <div class="user-details">
               <h4 class="name mb-0">${user.firstName}</h4>
               <p class="mb-0">Friend</p>
@@ -72,7 +122,6 @@ let postsList = data[0].users.map((user, index) => {
 });
 
 const currentUserPosts = parsedUser.posts.map((post, index) => {
-  console.log(post, 'he')
   return `
     <div class="col-12 col-sm-6" id="myDiv${index}">
       <div class="card mt-4">
@@ -97,15 +146,13 @@ const currentUserPosts = parsedUser.posts.map((post, index) => {
 
 postsWrapper.innerHTML += currentUserPosts.join("") + postsList.join("");
 
-console.log(currentUserPosts)
-
 const logout = () => {
   localStorage.removeItem("current-user");
   localStorage.removeItem("saved-user");
 };
 
 fileInp.addEventListener("change", (event) => {
-  uploadError.classList.add('d-none')
+  uploadError.classList.add("d-none");
   event.preventDefault();
   if (!file.value.length) return;
 
@@ -130,25 +177,21 @@ const addPost = () => {
   };
   if (uploadImageSrc) {
     const strSize = new Blob([uploadImageSrc]).size / 1000;
-    if(strSize > 400) {
-      console.log("Please select an Image size less then 400kb");
-      uploadError.classList.remove('d-none');
-      uploadError.innerText = "Please select an Image size less then 400kb"
+    if (strSize > 400) {
+      uploadError.classList.remove("d-none");
+      uploadError.innerText = "Please select an Image size less then 400kb";
       imgPreview.innerHTML = "";
     } else {
-
       const posts = [newPost, ...parsedUser.posts];
       const upUser = { ...parsedUser, posts };
-      
+
       localStorage.setItem("current-user", JSON.stringify(upUser));
-      console.log(upUser);
-      document.location.reload(true)
+      document.location.reload(true);
     }
   } else {
     console.log("Please select an Image");
   }
 };
-
 
 // likeBtn.addEventListener('click', likePost);
 

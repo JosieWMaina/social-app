@@ -36,6 +36,10 @@ input#file {
   max-width: 100%;
 }
 
+#file2 {
+  display: none;
+}
+
 .btn-global {
   background-image: linear-gradient(to right, #5bc9e4, #986de7);
   color: #fff;
@@ -71,6 +75,9 @@ input:focus {
 
 .nav-user-img {
   max-width: 40px;
+  min-width: 40px;
+  max-height: 40px;
+  min-height: 40px;
   border: 2px solid #976ee7;
   border-radius: 100%;
 }
@@ -131,6 +138,8 @@ input:focus {
 }
 
 #timeline .sidebar .nav-item .user-info img {
+  max-width: 80px;
+  max-height: 80px;
   min-width: 80px;
   min-height: 80px;
   border-radius: 100%;
@@ -156,8 +165,11 @@ input:focus {
 #timeline .timeline .post-form .user-image {
   max-width: 90px;
   max-height: 90px;
+  min-width: 90px;
+  min-height: 90px;
   border-radius: 100%;
   border: 3px solid #9670e7;
+  cursor: pointer;
 }
 
 #timeline .timeline .post-form textarea {
@@ -188,6 +200,8 @@ input:focus {
 #timeline .timeline .card .card-body img.user-image {
   max-width: 50px;
   max-height: 50px;
+  min-width: 50px;
+  min-height: 50px;
   border-radius: 100%;
   border: 2px solid #9670e7;
   margin-right: 10px;

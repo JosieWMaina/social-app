@@ -20,6 +20,7 @@ const signup = () => {
     lastName: lastNameInp.value,
     email: emailInp.value,
     password: passwordInp.value,
+    userImage: './../img/blank.jpg',
     confirmPassword: confirmPasswordInp.value,
   };
   if (

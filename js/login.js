@@ -35,7 +35,6 @@ const login = () => {
       (user) =>
         user.email === emailInp.value && user.password === passwordInp.value
     );
-    console.log(filteredU)
     const loginUser = {
       email: emailInp.value,
       password: passwordInp.value,

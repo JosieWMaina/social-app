@@ -83,7 +83,7 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                <img src="./img/user-1.jpg" alt="" class="nav-user-img" />
+                <img id="user-nav-img" src="./img/user-1.jpg" alt="" class="nav-user-img" />
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="#">Settings</a></li>
@@ -111,7 +111,7 @@
             <ul class="nav flex-column">
               <li class="nav-item pt-0">
                 <div class="user-info d-flex">
-                  <img src="./img/user-1.jpg" alt="" />
+                  <img id="user-image-sidebar" src="./img/user-1.jpg" alt="" />
                   <div class="details">
                     <h4 class="name" id="user-name">Joise</h4>
                     <p class="subtitle">Web Developer</p>
@@ -169,7 +169,17 @@
               <div class="col-12">
                 <form class="post-form" id="upload-form">
                   <div class="user-info-outer">
-                    <img src="./img/user-1.jpg" alt="" class="user-image" />
+                    <!-- <img src="./img/user-1.jpg" alt="" class="user-image" /> -->
+                    <label for="file2">
+                      <img
+                        src="./img/user-1.jpg"
+                        alt=""
+                        class="user-image"
+                        id="preview-user-image"
+                      />
+                    </label>
+                    <input type="file" id="file2" accept="image/*" />
+                    <span id="profile-upload-btn"></span>
                     <textarea
                       name="post-message"
                       class="form-control mx-3"
